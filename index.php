@@ -27,6 +27,7 @@
                 <select id="operation" name="operation">
                     <option value="sum">Suma</option>
                     <option value="subtract">resta</option>
+                    <option value="multiply">multiplicacion</option>
                 </select>
             </div>
 

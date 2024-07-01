@@ -45,7 +45,7 @@ input, select {
 }
 
 .btn {
-    background-color: #28a745;
+    background-color: #1b2b69;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -57,7 +57,7 @@ input, select {
 }
 
 .btn:hover {
-    background-color: #218838;
+    background-color: #2431bf;
 }
 
 .result {
