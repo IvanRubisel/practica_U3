@@ -7,7 +7,7 @@ $num2 = filter_input(INPUT_POST, 'num2', FILTER_VALIDATE_FLOAT);
 $operation = htmlspecialchars($_POST['operation'], ENT_QUOTES, 'UTF-8');
 
 // Validación adicional
-if ($num1 === false || $num2 === false || !in_array($operation, ['sum', 'subtract', 'multiply'])) {
+if ($num1 === false || $num2 === false || !in_array($operation, ['sum', 'subtract', 'multiply', 'divide'])) {
     handle_error(E_USER_ERROR, 'Entrada no válida.', __FILE__, __LINE__);
     exit();
 }
@@ -20,6 +20,12 @@ if ($operation == 'sum') {
     $result = $num1 - $num2;
 } elseif ($operation == 'multiply') {
     $result = $num1 * $num2;
+} elseif ($operation == 'divide') {
+    if ($num2 == 0) {
+        handle_error(E_USER_ERROR, 'División por cero.', __FILE__, __LINE__);
+        exit();
+    }
+    $result = $num1 / $num2;
 } else {
     handle_error(E_USER_ERROR, 'Operación no válida.', __FILE__, __LINE__);
     exit();
